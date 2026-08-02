@@ -1,0 +1,4 @@
+server = "your-server.database.windows.net"
+database = "your-database"
+username = "your-username"
+password = "your-password"

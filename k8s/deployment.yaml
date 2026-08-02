@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: retail-ml-app
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: retail-ml-app
+
+  template:
+    metadata:
+      labels:
+        app: retail-ml-app
+
+    spec:
+      containers:
+      - name: retail-ml-container
+
+        image: retailmlacr.azurecr.io/retail-ml-app:v1
+
+        ports:
+        - containerPort: 5000

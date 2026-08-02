@@ -2,6 +2,8 @@
 
 import numpy as np
 import pandas as pd
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import seaborn as sns
 import datetime as dt
@@ -18,7 +20,7 @@ def predict():
     # Droping rows having missing values
     retail = retail.dropna()
     # Changing the datatype of Customer Id as per Business understanding
-    retail['CustomerID'] = retail['CustomerID'].astype(str)
+    retail['CustomerID'] = retail['CustomerID'].astype(float).astype(int).astype(str)
 
     # New Attribute : Monetary
 
@@ -169,8 +171,9 @@ def predict():
 
     # assign the label
     rfm['Cluster_Id'] = kmeans.labels_
+    
+    rfm['CustomerID'] = rfm['CustomerID'].astype(int)
     return rfm
-
 
 """### Inference:
 K-Means Clustering with 3 Cluster Ids
