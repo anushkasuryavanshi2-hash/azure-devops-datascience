@@ -140,6 +140,56 @@ Create a `config.py` file using the provided `config.py.example` template before
 
 ---
 
+---
+
+# Screenshots
+
+## Azure Resource Group
+
+![Resource Group](screenshots/resource-group.png)
+
+---
+
+## Azure SQL Database
+
+![Azure SQL](screenshots/azure-sql.png)
+
+---
+
+## Azure Container Registry
+
+![ACR](screenshots/acr.png)
+
+---
+
+## Azure Kubernetes Service
+
+![AKS](screenshots/aks.png)
+
+---
+
+## Running Pods
+
+![Pods](screenshots/pods.png)
+
+---
+
+## Kubernetes Services
+
+![Services](screenshots/services.png)
+
+---
+
+## Docker Image
+
+![Docker](screenshots/docker-image.png)
+
+---
+
+## GitHub Repository
+
+![GitHub](screenshots/github-repo.png)
+
 ## Author
 
 **Anushka Suryawanshi**
