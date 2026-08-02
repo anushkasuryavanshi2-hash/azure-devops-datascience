@@ -1,4 +1,4 @@
-server = 'intel1.database.windows.net'
+server = 'sqlserver-anushka.database.windows.net'
 ddatabase = 'intellipaat'
-username = 'intel'
-password = 'Paat@123'
+username = 'sqladmin'
+password = 'Qwerty@123'
