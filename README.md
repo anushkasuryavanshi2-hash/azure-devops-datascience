@@ -1,17 +1,147 @@
-# Important Instructions
-1. Please use hshar/flaskapp as the base image in the Dockerfile
-2. The table name to be created in Azure SQL is "Person5", if you want to use another name, you can change it in the hello.py file
-3. Please enter all the values in the config.py file
-4. If you want to have a look at the dataset it's OnlineRetail.csv
-5. If you want to understand the ML code, you can check kmeans.py file
-6. To run the flask code, please use the following commands:
+# Azure DevOps Data Science Project
 
-git clone <github-link>
+## Project Overview
 
-cd ./azure-devops-datascience
+This project demonstrates an end-to-end deployment of a Machine Learning application on Microsoft Azure using modern DevOps practices.
 
-pip3 install -r requirements.txt
+The application performs customer segmentation using the K-Means clustering algorithm, stores the prediction results in Azure SQL Database, and is deployed on Azure Kubernetes Service (AKS) using Docker containers stored in Azure Container Registry (ACR).
 
-python3 hello.py
+---
 
-7. Remember without entering the correct values in config.py file, the code will not function properly and will give errors
+## Architecture
+
+```
+GitHub
+   │
+   ▼
+Docker Build
+   │
+   ▼
+Azure Container Registry (ACR)
+   │
+   ▼
+Azure Kubernetes Service (AKS)
+   │
+   ▼
+Flask Application
+   │
+   ▼
+Azure SQL Database
+```
+
+---
+
+## Technologies Used
+
+- Python
+- Flask
+- Scikit-learn
+- Pandas
+- Docker
+- Kubernetes
+- Azure Kubernetes Service (AKS)
+- Azure Container Registry (ACR)
+- Azure SQL Database
+- Azure CLI
+- Git & GitHub
+
+---
+
+## Features
+
+- Customer segmentation using K-Means
+- Stores prediction results in Azure SQL Database
+- Dockerized Python application
+- Deployed on AKS
+- Kubernetes Deployment and LoadBalancer Service
+- Version controlled using GitHub
+
+---
+
+## Project Structure
+
+```
+azure-devops-datascience/
+│
+├── Dockerfile
+├── README.md
+├── hello.py
+├── kmeans.py
+├── requirements.txt
+├── config.py.example
+├── k8s/
+│   ├── deployment.yaml
+│   └── service.yaml
+└── .gitignore
+```
+
+---
+
+## Docker
+
+Build image
+
+```bash
+docker build -t retail-ml-app .
+```
+
+Run container
+
+```bash
+docker run -p 5000:5000 retail-ml-app
+```
+
+---
+
+## Kubernetes Deployment
+
+```bash
+kubectl apply -f k8s/deployment.yaml
+kubectl apply -f k8s/service.yaml
+```
+
+Check pods
+
+```bash
+kubectl get pods
+```
+
+Check services
+
+```bash
+kubectl get svc
+```
+
+---
+
+## Azure Services Used
+
+- Azure Kubernetes Service (AKS)
+- Azure Container Registry (ACR)
+- Azure SQL Database
+
+---
+
+## Security
+
+Sensitive credentials are excluded from version control.
+
+Create a `config.py` file using the provided `config.py.example` template before running the application.
+
+---
+
+## Future Enhancements
+
+- Azure DevOps CI/CD Pipeline
+- GitHub Actions
+- Azure Key Vault integration
+- Monitoring using Azure Monitor
+- Horizontal Pod Autoscaling
+
+---
+
+## Author
+
+**Anushka Suryawanshi**
+
+Azure DevOps | Azure | Docker | Kubernetes | Terraform | Jenkins
